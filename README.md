@@ -2,23 +2,26 @@
 
 Send and receive MIDI over MQTT from the browser (or Node). Standard MIDI messages use **compact binary payloads**; channel and message type live in the **topic**. SysEx uses **JSON** only.
 
-**Status:** v0.1.0 — usable for browser/Node apps with an MQTT broker (WebSocket). Build and tests pass.
 
-Install from npm (once published):
+## Install
 
 ```bash
 npm install @grantler-instruments/mqtt-midi mqtt
 ```
 
-Or from GitHub (runs `prepare` → builds on install):
-
-```bash
-npm install github:grantler-instruments/mqtt-midi mqtt
-```
-
-Or locally: `npm install ../mqtt-midi mqtt`
+Package: [npmjs.com/package/@grantler-instruments/mqtt-midi](https://www.npmjs.com/package/@grantler-instruments/mqtt-midi)
 
 `mqtt` (MQTT.js v5+) is a **peer dependency** — your app installs and bundles it once.
+
+**Alternatives:**
+
+```bash
+# From GitHub (runs prepare → builds on install)
+npm install github:grantler-instruments/mqtt-midi mqtt
+
+# Local path (development)
+npm install ../mqtt-midi mqtt
+```
 
 ## Example: controller in the browser
 
