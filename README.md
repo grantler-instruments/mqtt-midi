@@ -47,6 +47,19 @@ npm install @grantler-instruments/mqtt-midi mqtt
 
 **Bridge** — no global install required if you use `npx` (see below).
 
+## Test the bridge locally (before npm publish)
+
+From the repo root (after `npm install`):
+
+```bash
+npm run bridge -- --help
+npm run bridge -- --list-ports
+npm run bridge -- --url mqtt://localhost:1883 --prefix remote
+npm run bridge -- --config ./packages/mqtt-midi-bridge/mqtt-midi-bridge.config.example.json
+```
+
+`npm run bridge` builds the bridge package, then runs the same binary that ships on npm (`packages/mqtt-midi-bridge/bin/mqtt-midi-bridge.js`). Everything after `--` is passed to the CLI.
+
 ## Using the bridge
 
 The bridge connects **MQTT** (same topic layout as the library) to **MIDI** on your machine. A typical setup:

@@ -6,6 +6,7 @@
   ],
   "scripts": {
     "build": "npm run build -w @grantler-instruments/mqtt-midi && npm run build -w @grantler-instruments/mqtt-midi-bridge",
+    "bridge": "npm run build -w @grantler-instruments/mqtt-midi-bridge && node packages/mqtt-midi-bridge/bin/mqtt-midi-bridge.js",
     "test": "npm run test --workspaces --if-present",
     "test:watch": "npm run test:watch -w @grantler-instruments/mqtt-midi",
     "publish:bridge": "npm run test -w @grantler-instruments/mqtt-midi-bridge && npm run build -w @grantler-instruments/mqtt-midi-bridge && npm publish -w @grantler-instruments/mqtt-midi-bridge",
