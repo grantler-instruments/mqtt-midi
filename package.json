@@ -8,6 +8,8 @@
     "build": "npm run build -w @grantler-instruments/mqtt-midi && npm run build -w @grantler-instruments/mqtt-midi-bridge",
     "test": "npm run test --workspaces --if-present",
     "test:watch": "npm run test:watch -w @grantler-instruments/mqtt-midi",
+    "publish:bridge": "npm run test -w @grantler-instruments/mqtt-midi-bridge && npm run build -w @grantler-instruments/mqtt-midi-bridge && npm publish -w @grantler-instruments/mqtt-midi-bridge",
+    "publish:bridge:dry-run": "npm run build -w @grantler-instruments/mqtt-midi-bridge && npm publish -w @grantler-instruments/mqtt-midi-bridge --dry-run",
     "publish:packages": "npm run test && npm run build && npm publish -w @grantler-instruments/mqtt-midi && npm publish -w @grantler-instruments/mqtt-midi-bridge",
     "publish:packages:dry-run": "npm run test && npm run build && npm publish -w @grantler-instruments/mqtt-midi --dry-run && npm publish -w @grantler-instruments/mqtt-midi-bridge --dry-run"
   },

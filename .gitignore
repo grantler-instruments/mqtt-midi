@@ -1,4 +1,5 @@
 node_modules/
 dist/
+packages/mqtt-midi-bridge/bin/
 *.tsbuildinfo
 .DS_Store

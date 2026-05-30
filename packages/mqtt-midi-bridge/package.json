@@ -1,10 +1,10 @@
 {
   "name": "@grantler-instruments/mqtt-midi-bridge",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Bridge MQTT MIDI topics to system MIDI ports (hardware or virtual)",
   "type": "module",
   "bin": {
-    "mqtt-midi-bridge": "./dist/cli.js"
+    "mqtt-midi-bridge": "bin/mqtt-midi-bridge.js"
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -15,6 +15,7 @@
     }
   },
   "files": [
+    "bin",
     "dist",
     "README.md",
     "LICENSE",
@@ -36,7 +37,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@grantler-instruments/mqtt-midi": "0.1.0",
+    "@grantler-instruments/mqtt-midi": "^0.1.0",
     "@julusian/midi": "^3.6.1",
     "mqtt": "^5.15.0"
   },

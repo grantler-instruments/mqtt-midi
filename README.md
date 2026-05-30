@@ -19,13 +19,23 @@ npm test
 
 ## Publish to npm
 
-Bump `version` in both `packages/*/package.json` (keep them in sync if the bridge depends on that library version), log in (`npm login`), then from the repo root:
+Log in with `npm login`. Bump `version` in `packages/mqtt-midi-bridge/package.json` before each bridge release (npm will not overwrite an existing version). If `0.1.0` was published without a working CLI, publish `0.1.1` (or newer).
+
+**Bridge only** (library already on npm):
+
+```bash
+npm run publish:bridge
+```
+
+Preview: `npm run publish:bridge:dry-run`.
+
+**Library + bridge** — bump both package versions, then:
 
 ```bash
 npm run publish:packages
 ```
 
-Publishes `@grantler-instruments/mqtt-midi` first, then `@grantler-instruments/mqtt-midi-bridge`. Preview with `npm run publish:packages:dry-run`.
+Preview: `npm run publish:packages:dry-run`.
 
 ## Install (apps)
 
