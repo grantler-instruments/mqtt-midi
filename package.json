@@ -1,47 +1,15 @@
 {
-  "name": "@grantler-instruments/mqtt-midi",
-  "version": "0.1.0",
-  "description": "Send and receive MIDI over MQTT with binary payloads (JSON for SysEx only)",
-  "type": "module",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
-    }
-  },
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE"
+  "name": "mqtt-midi-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*"
   ],
   "scripts": {
-    "build": "tsup",
-    "prepare": "npm run build",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "prepublishOnly": "npm run build"
-  },
-  "keywords": [
-    "midi",
-    "mqtt",
-    "websocket",
-    "browser"
-  ],
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
-  "peerDependencies": {
-    "mqtt": "^5.0.0"
-  },
-  "devDependencies": {
-    "mqtt": "^5.15.0",
-    "tsup": "^8.5.0",
-    "typescript": "^5.9.2",
-    "vitest": "^3.2.4"
+    "build": "npm run build -w @grantler-instruments/mqtt-midi && npm run build -w @grantler-instruments/mqtt-midi-bridge",
+    "test": "npm run test --workspaces --if-present",
+    "test:watch": "npm run test:watch -w @grantler-instruments/mqtt-midi",
+    "publish:packages": "npm run test && npm run build && npm publish -w @grantler-instruments/mqtt-midi && npm publish -w @grantler-instruments/mqtt-midi-bridge",
+    "publish:packages:dry-run": "npm run test && npm run build && npm publish -w @grantler-instruments/mqtt-midi --dry-run && npm publish -w @grantler-instruments/mqtt-midi-bridge --dry-run"
   },
   "engines": {
     "node": ">=18"
