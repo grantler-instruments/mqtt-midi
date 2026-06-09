@@ -105,6 +105,12 @@ npx @grantler-instruments/mqtt-midi-bridge \
 
 More detail: [packages/mqtt-midi-bridge/README.md](./packages/mqtt-midi-bridge). Library docs: [packages/mqtt-midi/README.md](./packages/mqtt-midi).
 
+## Support
+
+If you find this project useful, you can support development:
+
+[![Buy Me A Coffee](https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png)](https://buymeacoffee.com/thomasgeissl)
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
