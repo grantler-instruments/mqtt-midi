@@ -103,6 +103,8 @@ npx @grantler-instruments/mqtt-midi-bridge \
   --midi-out "loopMIDI Port"
 ```
 
+**Desktop alternative** — prefer a GUI over the CLI? [midge](https://github.com/grantler-instruments/midge) is a desktop app that bridges MQTT and MIDI.
+
 More detail: [packages/mqtt-midi-bridge/README.md](./packages/mqtt-midi-bridge). Library docs: [packages/mqtt-midi/README.md](./packages/mqtt-midi).
 
 ## Support
