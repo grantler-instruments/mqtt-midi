@@ -64,6 +64,19 @@ npm run bridge -- --config ./packages/mqtt-midi-bridge/mqtt-midi-bridge.config.e
 
 The bridge connects **MQTT** (same topic layout as the library) to **MIDI** on your machine. A typical setup:
 
+```mermaid
+flowchart LR
+    browser["Browser app<br/>@grantler-instruments/mqtt-midi"]
+    broker[("MQTT broker<br/>e.g. Mosquitto")]
+    bridge["mqtt-midi-bridge<br/>CLI"]
+    daw["DAW / MIDI app"]
+
+    browser -- "publish {prefix}/in/..." --> broker
+    broker -- "subscribe {prefix}/out/..." --> browser
+    broker <-- "MQTT" --> bridge
+    bridge <-- "virtual MIDI port<br/>(or loopMIDI / IAC)" --> daw
+```
+
 1. Run an MQTT broker (e.g. Mosquitto on `mqtt://localhost:1883`).
 2. Start the bridge with the same `prefix` your web app uses (e.g. `remote`).
 3. In your DAW or MIDI app, select the **`mqtt-midi-bridge`** virtual port (macOS/Linux default), or the loopMIDI / IAC ports you configured.
